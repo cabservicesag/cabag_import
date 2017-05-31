@@ -1,0 +1,60 @@
+
+
+
+<f:be.container pageTitle="Reports">
+
+	<script type="text/javascript" src="{pathToExt}Resources/Public/JavaScript/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/Flexigrid/js/flexigrid.pack.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/dist/jquery.jqplot.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/dist/plugins/jqplot.dateAxisRenderer.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/dist/plugins/jqplot.barRenderer.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/dist/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/dist/plugins/jqplot.pointLabels.min.js"></script>
+	<script type="text/javascript" src="{pathToExt}Resources/Public/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js"></script>
+	<link media="all" href="{pathToExt}Resources/Public/dist/jquery.jqplot.min.css" type="text/css" rel="stylesheet">
+	<link media="all" href="{pathToExt}Resources/Public/Flexigrid/css/flexigrid.pack.css" type="text/css" rel="stylesheet">
+	<link media="all" href="{pathToExt}Resources/Public/jquery-ui-1.9.2.custom/css/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css" rel="stylesheet">
+	
+	<!--[if IE]><script language="javascript" type="text/javascript"  src="{pathToExt}Resources/Public/dist/excanvas.js"></script><![endif]--> 
+	
+	<script type="text/javascript">
+		$j=jQuery.noConflict();
+		if(!window.jQuery) {
+		   //alert("!window.jQuery");
+		}
+	</script>
+
+
+	<div class="typo3-fullDoc">
+		<div id="typo3-docheader">
+			<div id="typo3-docheader-row1">
+				<div class="buttonsleft">
+
+				</div>
+				<div class="buttonsright">
+					<f:be.buttons.shortcut />
+				</div>
+			</div>
+			<div id="typo3-docheader-row2">
+				<!--<div class="docheader-row2-left">
+					<f:be.buttons.csh />
+					<f:be.menus.actionMenu>
+						<f:be.menus.actionMenuItem label="Overview" controller="" action="list" />
+						<f:be.menus.actionMenuItem label="Create new Report" action="new" controller="Report" />
+					</f:be.menus.actionMenu>
+				</div>-->
+				<div class="docheader-row2-right">
+					<f:be.pagePath />
+					<f:be.pageInfo />
+				</div>
+			</div>
+
+		</div>
+		<div id="typo3-docbody">
+			<div id="typo3-inner-docbody">
+				<f:flashMessages renderMode="div" />
+				<f:render section="main" />
+			</div>
+		</div>
+	</div>
+</f:be.container>

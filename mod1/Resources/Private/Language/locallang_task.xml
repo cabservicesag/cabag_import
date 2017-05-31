@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the sys_log cleanup scheduler task</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="importUid">Choose a task</label>
+			<label index="override">Override configurations from the task with the following values (not implemented yet)</label>
+			<label index="name">Perform import</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="importUid">Task auswählen</label>
+			<label index="override">Konfiguration mit folgenden Werten überschreiben (noch nicht implementiert)</label>
+			<label index="name">Import durchführen</label>
+		</languageKey>
+	</data>
+</T3locallang>

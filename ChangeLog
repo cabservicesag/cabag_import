@@ -1,0 +1,1064 @@
+2017-05-09 Lavinia Negru <ln@cabag.ch>
+	* version 2.8.27
+	* modified Fieldproc/AddToCommaSeparatedList.php and Fieldproc/CommaSeparatedLocal.php
+	* fixed issue #37660
+
+2017-03-30 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.26
+	* fixed issue with xls source that extended the wrong class
+
+2017-03-16 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.25
+	* added bugfix from 2.3.5
+
+2017-02-27 Lavinia <ln@cabag.ch>
+    * version 2.8.25
+    * change Command/ImportCommandController.php to use the new ImportHandler
+    * change Command/ImportCommandController.php to addd new feature: Comma Separated List of UIDs
+    * fixed issue #35865
+
+2017-02-27 Lavinia <ln@cabag.ch>
+    * version 2.8.24
+    * change ImportController.php to add new condition for filePath overwrite
+    * fixed issue #35865
+
+2017-02-13 Lavinia <ln@cabag.ch>
+    * version 2.8.23
+    * changed delimiterin AddToCommaseparatedList fieldproc
+
+2017-02-08 Lavinia <ln@cabag.ch>
+    * version 2.8.22
+    * added timestamp option to strtotime fieldproc
+    * added AddToCommaseparatedList,CommaSeparatedLocal and TransformToSqlIn fieldproc
+
+2017-02-08 Tizian Schmidlin <st@cabag.ch>
+    * version 2.8.21
+    * fixed enctype for form upload
+    * fixed misspelled TYPO3_DB in Domain/Repository/Storage
+
+2016-12-21 Lavinia Negru <ln@cabag.ch>
+	* version 2.8.20
+	* fixed declaration error for Json Interpret
+	* issue #34919
+
+2017-01-20 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.19
+	* fixed getKeyFieldsQuery for all storages
+	* made some code cleanup
+
+2016-12-21 Lavinia Negru <ln@cabag.ch>
+	* version 2.8.18
+	* added interpreter for json
+
+2016-12-16 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.17
+	* fixed issue in ImportHandler where the class name has been replaced with some other
+	* version 2.8.16
+	* new version because of tagging issue
+	* version 2.8.15
+	* removed all calls to t3lib_* classes where relevant
+
+2016-09-27 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.14
+	* replaced t3lib_div with GeneralUtility
+	* version 2.8.13
+	* added features from 2.2.0-2.2.2
+	* fixed module icon
+
+2016-08-30 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.12
+	* added improvements from 2.1.5
+	* added import command, since this seems to have missed until now
+
+2016-06-15 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.11
+	* added improvements from 2.1.4
+	* fixed module icon for TYPO3 7.6+
+	* Icons made by Madebyoliver from www.flaticon.com is licensed by CC 3.0 BY
+
+2016-06-15 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.10
+	* added improvements from 2.1.3
+
+2016-06-13 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.9
+	* implemented fix from 2.1.2
+
+2016-05-13 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.8
+	* implemented changes from 2.1.0 and 2.1.1
+
+2016-05-06 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.7
+	* added improvements from 2.0.15 and 2.0.16
+	* updated description for SQL storages
+
+2016-04-01 Christopher Schnell <cs@cabag.ch>
+	* version 2.8.6
+	* added fixes from 2.0.14 credits to cs@cabag.ch: added Parameter truncateBeforeImport to mysql storage. This allows us to truncate mm-tables before import
+
+2016-04-01 Christopher Schnell <cs@cabag.ch>
+	* version 2.8.5
+	* added fixes from 2.0.9 to 2.0.13 credits to cs@cabag.ch: added mysqli storage
+
+2016-04-01 Christopher Schnell <cs@cabag.ch>
+	* version 2.8.4
+	* added fix from 2.0.8 credits to ph@cabag.ch: added option dontAllowInserts to sql storage
+
+2016-04-01 Christopher Schnell <cs@cabag.ch>
+	* version 2.8.3
+	* added fix from 2.0.7 credits to cs@cabag.ch: fixed update bug in mysqlsrv
+
+2016-01-21 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.2
+	* fixed module label
+	* removed some debugs
+
+2015-12-18 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.1
+	* added fix from 2.0.6, credits to st@cabag.ch: storage:csv: custom title row was not written (fields.xyz.title)
+
+2015-11-03 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.0
+	* from 2.0.5, credits to jf@cabag.ch: storage:csv: custom title row was not written (fields.xyz.title)
+	* from 2.0.4, credits to ph@cabag.ch: fixed bug in mail logger
+	* from 2.0.4, credits to ph@cabag.ch: hadded option to only make updates but no inserts for tce storage
+	* from 2.0.3, credits to st@cabag.ch: mail logger now uses default TYPO3 Mailer
+	* from 2.0.3, credits to st@cabag.ch: added from and replyTo for mail logger (optional)
+	* from 2.0.2, credits to nb@cabag.ch: made sure csv interpreter searches on until it finds a non-empty row
+	* from 2.0.2, credits to nb@cabag.ch: made sure xls source uses proper input encoding under windows
+	* from 2.0.1, credits to st@cabag.ch: added autoload for external extension use
+	* from 2.0.0, credits to st@cabag.ch: fixed multiple recipients for mail storage cc and bcc
+	* version 2.7.0
+	* finished testing everything
+	* separate fork for unit testing from here
+
+2015-10-16 Tizian Schmidlin <st@cabag.ch>
+	* version 2.6.1
+	* moved everything to fluid
+	* fixed several errors throught the classes and the definitions
+
+2015-10-08 Tizian Schmidlin <st@cabag.ch>
+	* version 2.6.0
+	* moved locallang_db.xml to Resources/Private/Language
+	* moved parts of the content to fluid rendering
+
+2015-07-30 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.9
+	* renamed Flie.php to File.php
+
+2015-07-24 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.8
+	* fixed incompatibility bugs
+
+2015-07-22 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.7
+	* fixed many naming bugs and typos
+
+2015-06-24 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.6
+	* finished first implementation of the configuration examples
+	* removed unused configuration examples (DAM)
+	* removed unused SourceInterface from extension root
+	* removed tca.php
+	* updated Tca/Config.php in order to use the configuration example
+
+2015-06-16 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.5
+	* finished migrating files to new structure
+
+2015-06-09 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.4
+	* fixed registration utility definition
+	* added ProgressUpdaterInterface and ProgressReader
+
+2015-03-26 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.3
+	* fixed filenames and classnames of Fieldprocs
+	* fixed Cobj Configuration
+
+2015-03-25 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.2
+	* fixed exception namespaces
+	* version 2.5.1
+	* worked on rewrite, moved fieldprocs to Classes/Fieldproc
+
+2015-03-22 Tizian Schmidlin <st@cabag.ch>
+	* version 2.5.0
+	* began working on rewrite of extension
+
+2015-02-18 Tizian Schmidlin <st@cabag.ch>
+	* version 1.9.9
+	* refactored storage tce to use COUNT(*) as c instead of sql_num_rows
+
+2015-02-13 Nils Blattner <nb@cabag.ch>
+	* version 1.9.8
+	* fixed an issue with source file and remote files
+
+2014-12-19 Tizian Schmidlin <st@cabag.ch>
+	* version 1.9.7
+	* added $GLOBALS['_SERVER']['HTTPS'] = '1'; in import.phpsh (to fake SSL)
+
+2014-12-12 Tizian Schmidlin <st@cabag.ch>
+	* version 1.9.6
+	* fixed an issue with boms in cli script
+	* replaced $_EXTKEY by 'cabag_import' in ext_localconf.php
+
+2014-12-08 Michael Bossart <mb@cabag.ch>
+	* version 1.9.5
+	* [6.2] added dependency for scheduler in ext_emconf.php
+
+2014-12-03 Tizian Schmidlin <st@cabag.ch>
+	* version 1.9.4
+	* added exit codes to cli script import.phpsh
+
+2014-12-02 Nils Blattner <nb@cabag.ch>
+	* version 1.9.3
+	* [6.2] fixed 6.2 compatibility for cli script
+
+2014-12-01 Enrico Ludwig <el@cabag.ch>
+	* version 1.9.2
+	* Fixes issue #12210 - Added new flag lineEndingsCRLF to reset line endings to CRLF instead of LF only
+
+2014-11-27 Massimo Lepore <ml@cabag.ch>
+	* version 1.9.1
+	* [FEATURE] Added switch to cabagimport_handler.php to add PATH_site if file doesn't exist.
+
+2014-10-23 Tizian Schmidlin <st@cabag.ch>
+	* version 1.9.0
+	* [BUGFIX] fixed regression bug in AdditionalFieldProvider/Import.php, the wrong interface was implemented
+
+2014-10-22 Tizian Schmidlin <st@cabag.ch>
+	* version 1.8.9
+	* [UI] added additionalInformation for the task, so you see the task uid below the scheduler task name
+
+2014-10-02 Massimo Lepore <ml@cabag.ch>
+	* version 1.8.8
+	* [SECURITY] fixed possible sql inject in mod1/index.php on line 06 - issue #9079
+
+2014-09-26 Tizian Schmidlin <st@cabag.ch>
+	* version 1.8.7
+	* throw fileNotExists Exception if the file does not exist, is empty or could not be opened
+
+2014-09-25 Tizian Schmidlin <st@cabag.ch>
+	* version 1.8.6
+	* [BUGFIX] fixed a bug in task execution
+	* version 1.8.5
+	* [FEATURE] added TYPO3 scheduler support
+
+2014-09-08 Massimo Lepore <ml@cabag.ch>
+	* version 1.8.4
+	* [BUGFIX] edited source mysqli - fixed issue which prevented a proper connection to remote systems.
+
+2014-08-25 Manuel Bloch <bm@cabag.ch>
+	* version 1.8.3
+	* [BUGFIX] edited updateObsolete feature, changed the call of deleteObsolete function without pasing the addWhere variable
+
+2014-08-13 Jonas Felix <jf@cabag.ch>
+	* verison 1.8.2
+	* [BUGFIX] fieldproc/strotime => config not assigned to $this therefore $this->value didn't work
+	* integrated updateObsolete feature to define the values that have to be set on deleteObsolete
+
+2014-08-06 Nils Blattner <nb@cabag.ch>
+	* version 1.8.1
+	* [BUGFIX] fixed an issue when no field configuration was set for csv storage
+
+2014-06-30 Nils Blattner <nb@cabag.ch>
+	* version 1.8.0
+	* [BUGFIX] fixed an issue with reactivateDeletedRecords
+
+2014-06-30 Jonas Felix <jf@cabag.ch>
+	* version 1.7.6
+	* compatibility 6.2 module (clean fix!) <= no smoothmigration anymore!
+	* added mysqli source - auto fallback from mysql to mysqli if 6.2
+
+2014-06-23 Nils Blattner <nb@cabag.ch>
+	* version 1.7.5
+	* [BUGFIX] fixed an issue with intval field proc where no configuration was given
+	* [FEATURE] implemented reactivateDeletedRecords option for TCE storage
+	* [FEATURE] implemented deleteObsolete.deleteThreshold option for TCE storage
+
+2014-06-13 Tizian Schmidlin <st@cabag.ch>
+	* version 1.7.4
+	* added a lapse of 10 seconds when deleteObsolete is called, since it appears that on some systems the internal timestamp is modified by some magic behavior. Also, there will never be two imports that access the same data in such a short time lapse (this would make no sense)
+
+2014-03-05 TIzian Schmidlin <st@cabag.ch>
+	* version 1.7.3
+	* added quoteStr for realtion fieldproc
+
+2013-11-22 Tizian Schmidlin <st@cabag.ch>
+	* version 1.7.2
+	* added utf8_decode to xml interpreter
+
+2013-11-15 Tizian Schmidlin <st@cabag.ch>
+	* version 1.7.1
+	* fixed various issues in file_exists fieldprocs, such as typos and complete implementation failures
+
+2013-11-14 Jonas Felix <jf@cabag.ch>
+	* version 1.7.0
+	* fixed intval
+	* added file_exists fieldproc
+
+2013-10-31 Nils Blattner <nb@cabag.ch>
+	* version 1.6.9
+	* added fieldproc htmlentitiesdecode
+
+2013-10-31 Tizian Schmidlin <st@cabag.ch>
+	* version 1.6.8
+	* added fieldproc htmlspecialchars
+	* added fieldproc htmlspecialcharsdecode
+
+2013-08-27 Florian Mast <fm@cabag.ch>
+	* version 1.6.7
+	* added split.newline to copyfile fieldproc
+
+2013-10-01 Dimitri König <dk@cabag.ch>
+	* version 1.6.6
+	* [FEATURE] Configs can be read from files
+	* [FEATURE] onlyConfigsFromFile Option
+	* [FEATURE] enablePermissionCheck Option
+
+2013-09-26 Tizian Schmidlin <st@cabag.ch>
+	* version 1.6.5
+	* [FEATURE] strtotime default value "now" ist now interpreted as time()
+
+2013-09-19 Tizian Schmidlin <st@cabag.ch>
+	* version 1.6.4
+	* reverted exception removal, now with option doNotThrowNotFound you can silence these exceptions
+
+2013-09-18 Tizian Schmidlin <st@cabag.ch>
+	* version 1.6.3
+	* [BUGFIX] fixed an issue in bintohex and bintodec fieldprocs
+	* version 1.6.2
+	* [FEATURE] added new bintohex fieldproc
+	* [FEATURE] added new bintodec fieldproc
+	* [BUGFIX] removed exceptions from copyfile, now simply adds a message
+	* [DOCUMENTATION] added bintodec, bintohex, strtolower and floatval examples
+
+2013-08-27 Florian Mast <fm@cabag.ch>
+	* version 1.6.1
+	* added split.newline to copyfile fieldproc
+
+2013-08-20 Tizian Schmidlin <st@cabag.ch>
+	* version 1.6.0
+	* [FEATURE] added new option to sql storage: 'allowEmptyKeyfields'
+
+2013-08-16 Tizian Schmidlin <st@cabag.ch>
+	* version 1.5.9
+	* added charset conversion based on handler for the titlerow
+
+2013-07-25 Tizian Schmidlin <st@cabag.ch>
+	* version 1.5.8
+	* fixed csv headers for storage csv
+
+2013-07-24 Tizian Schmidlin <st@cabag.ch>
+	* version 1.5.7
+	* fixed csv storage to comply to the documentation, now you can put writeTitleRow as well un storage.writeTitleRow as in storage.fields.writeTitleRow
+
+2013-07-11 Florian Mast <fm@cabag.ch>
+	* version 1.5.6
+	* added option doNotCheckDeleted for 1:n relation
+
+
+2013-07-11 Tizian Schmidlin <st@cabag.ch>
+	* version 1.5.5
+	* [FEATURE] added sourceIsRelPath to copyfile fieldproc
+
+2013-06-26 Nils Blattner <nb@cabag.ch>
+	* version 1.5.4
+	* [FEATURE] changed mssql_connect to always generate a new link
+
+2013-06-26 Nils Blattner <nb@cabag.ch>
+	* version 1.5.3
+	* [FEATURE] added noPconnect option to mssql source
+
+2013-06-26 Nils Blattner <nb@cabag.ch>
+	* version 1.5.2
+	* [FEATURE] added minimumMessageSeverity option to mssql source
+
+2013-06-25 Nils Blattner <nb@cabag.ch>
+	* version 1.5.1
+	* [BUG] fixed a small bug in mm fieldproc
+
+2013-05-29 Nils Blattner <nb@cabag.ch>
+	* version 1.5.0
+	* [BUG] fixed a small bug
+
+2013-05-29 Nils Blattner <nb@cabag.ch>
+	* version 1.4.9
+	* [FEATURE] Added ignoreTablepid option to mm field proc
+
+2013-05-28 Dimitri König <dk@cabag.ch>
+	* version 1.4.8
+	* [FEATURE] Added cobj fieldproc. See example config for more
+
+13-04-19 Tizian Schmidlin <st@cabag.ch>
+	* version 1.4.7
+	* added tx_cabagimport_markers support, now you can overwrite things by setting $GLOBALS['tx_cabagimport_markers']['...']
+	* added support for INCLUDE_TYPOSCRIPT
+
+13-04-16 - Florian Mast <fm@cabag.ch>
+	* version 1.4.6
+	* added Doku for CSV-Export
+
+13-04-11 - Tizian Schmidlin <st@cabag.ch>
+	* version 1.4.5
+	* created new sqlsrv source
+
+13-03-27 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.4.4
+	* [FEATURE] Add option to mailstorage to decide wether it should take phps mail function or typo3 configured mail (e.x.swiftmailer)
+
+13-03-26 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.4.3
+	* [FEATURE] Add mail storage
+	* [FEATURE] Add compilation to one multiline string out of a sql select
+
+13-03-15 - Tizian Schmidlin <st@cabag.ch>
+	* version 1.4.2
+	* added new source sqlsrv
+
+13-02-01 - Massimo Lepore <ml@cabag.ch>
+	* version 1.4.1
+	* updated manual-doc.swx
+
+13-01-02 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.4.0
+	* [FEATURE] Add deleteObsolete.ignorePid to TCA Storage
+	* refactored tx_cabagimport_storage_tce::deleteObsolete()
+
+12-04-12 - Manuel Bloch <bm@cabag.ch>
+	* version 1.3.9
+	* added fix to tx_cabagimport_interpret_csv which ocures with fgetcsv -> https://bugs.php.net/bug.php?id=63433
+
+26-11-14 - Manuel Bloch <bm@cabag.ch>
+	* version 1.3.8
+	* added lib/loghandler/tx_cabagimport_loghandler_mail.php
+	* added lib/interfaces/tx_cabagimport_iloghandler.php
+	* added new class tx_cabagimport_loghandler_mail.php
+	* added log handling possibility
+
+26-07-06 - Jonas Felix <jf@cabag.ch>
+	* version 1.3.7
+	* fieldproc/commaseparated_mm - fixed classname notfound
+
+26-07-06 - Jonas Felix <jf@cabag.ch>
+	* version 1.3.6
+	* fieldproc/commaseparated_mm - fixed bug that deleted=1 records where used
+	* fieldproc/mm - fixed bug that deleted=1 records where used
+
+26-07-06 - Jonas Felix <jf@cabag.ch>
+	* version 1.3.5
+	* fieldproc/commaseparated_mm - added new mm fieldproc for comma separated relations
+	* fieldproc/mm - fixed XCLASS defintion
+
+12-07-06 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.3.4
+	* fieldproc/sql - added justDoTheQuery option to sql fieldproc
+
+12-03-12 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.3.3
+	* fixed bug in ext_tables.sql so that TYPO3's install tool runs smoothly
+
+12-02-01 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.3.2
+	* copypage fieldproc returns new pid of page
+	* copypage fieldproc has additional sql check feature
+
+12-02-01 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.3.1
+	* added split.newline = 1 to mm_relation fieldproc
+
+11-11-24 - Tizian Schmidlin <st@cabag.ch>
+	* version 1.3.0
+	* fieldprocs/mm: added the following on line 94 at class.tx_cabagimport_fieldproc_mm.php:
+	elseif( $this->conf['tablepid'] == 0) {
+		$relatedRecordWhere .= 'AND pid = '.$this->conf['tablepid'].' ';
+	}
+	This is needed so I can make mm relations to tables that are located on pid=0
+	As soon as this fix is in the main branch, this extension can be updated.
+	* fieldprocs/relation: ixed xclass code for relation field proc
+	* fieldprocs/relation: fixed error reporting
+	* TCA + SQL : added availableOptions field in TCA
+
+11-11-16 - Tizian Schmidlin <st@cabag.ch>
+	* version 1.2.9
+	* improved fgetcsv condition with strlen(trim($this->conf['enclosure'])) > 0 && so it gets first tested and then is read if is true
+
+11-11-10 - Tiziab Schmidlin <st@cabag.ch>
+	* version 1.2.8
+	* fixed fgetcsv bug when enclosure is empty
+
+11-09-14 - Sonja Scholz <sonja.scholz@typo3.org>
+	* Version 1.2.7
+	* fixed bug in mod1/index.php - upload importfiles to uploads/tx_cabagimport instead to typo3temp
+
+11-08-22 - Nils Blattner <nb@cabag.ch>
+	* version 1.2.6
+	* fixed an issue that *_fieldproc_files would not clear the current field value if an empty array was supplied
+
+11-08-17 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.2.5
+	* fixed bug where htaccess wont be written to a non existing directory
+
+11-08-08 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.2.4
+	* added default option to select fieldproc
+
+11-07-29 - Jonas Duebi <jd@cabag.ch>
+	* version 1.2.3
+	* sources/recordsintree: fixed pidList
+
+11-07-29 - Sonja Scholz <ss@cabag.ch>
+	* sources/file: new config option absoluteFilePath = 1 to prevent file source from adding PATH_site to filepath
+	* tca.php : added new option absoluteFilePath to default config
+
+11-07-28 - Jonas Duebi <jd@cabag.ch>
+	* version 1.2.2
+	* security: ext_tables.php: Check uploads/tx_cabagimport and create .htaccess deny from all
+	* sources/recordsfromtree: new source that allows to get records within a TYPO3 tree
+	* fieldproc/maptranslations: replaces default language tt_content uids with translated uids
+	* fieldproc/select: fixed xclass code
+
+11-07-07 - Dimitri Koenig <dk@cabag.ch>
+	* version 1.2.1
+	* added copypage fieldproc
+
+	* Changes from Nils Blattner
+	* Changed xls source to allow unix version of catdoc on windows machines
+	* Changed xls source to make it configurable for windows
+
+	* Changes from Sonja Scholz:
+	* source_file modified - correct path
+	* source_xls modified - POC for executing xls2csv on windows
+	* handler modified - added getCountOfRecords function and var countOfRecords
+
+11-05-31 Tizian Schmidlin <st@cabag.ch>
+	* version 1.2.0
+	* added error labels for ldap source.
+	* modified objectSid field interpretation to bin2hex only and added objectGUID to the list of field that have to be converted.
+	* made some code cleanup in the ldap source
+
+11-05-30 Nils Blattner <nb@cabag.ch>
+	* version 1.1.9
+	* storage/tce - removed an if at line 252 that didn't update an mm-relation in case there were no new relations
+
+11-05-26 Tizian Schmidlin <st@cabag.ch>
+	* version 1.1.8
+	* added default for ldap source in tca
+
+11-05-25 - Tizian Schmidlin <st@cabag.ch>
+	* integrated first version of ldap source
+
+11-04-20 - Sonja Scholz <ss@cabag.ch>
+	* Version 1.1.7
+	* changed sql query in getConfig function in index.php - do not use TRUE AND in mssql environments
+
+11-03-17 - Tizian Schmidlin <st@cabag.ch>
+	* version 1.1.6
+	* added forceCharset option to xls source
+
+11-03-14 - Jonas Dübi <jd@cabag.ch>
+	* Version 1.1.5
+	* storage/sql -> updateRow() - added devLog which logs the $query
+	* storage/sql -> updateRow() - added sql escape string to updateRow tablekeys where
+	* storage/sql -> updateRow() - added exception if key field is empty in update record row
+	* storage/sql -> writeRow() - existingRecord now attribute -> $this->existingRecord
+	* storage/sql -> updateRow() - now uses $this->existingRecord for $tablekeys field
+	* storage/sql -> deleteObsolete() - addWhere is now set to 'TRUE' if empty
+
+11-01-13 - Nils Blattner <nb@cabag.ch>
+	* Version 1.1.4
+	* changed handler to also replace the currentRowRaw for each fieldproc
+
+11-01-13 - Nils Blattner <nb@cabag.ch>
+	* Version 1.1.3
+	* added save_to_raw_row fieldproc
+
+10-12-08 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.1.2
+	* added some options to files fieldproc
+
+10-12-02 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.1.1
+	* fixed some csv storage bugs
+
+10-11-18 - Nils Blattner <nb@cabag.ch>
+	* Version 1.1.0
+	* changed csv interpreter to be used without the native php function
+	* changed the tca to add the typoscript options
+
+10-11-09 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.9
+	* added if_preg_match fieldproc
+
+10-11-08 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.8
+	* added memorylimit extconf option
+
+10-10-22 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.7
+	* removed exception if mm relation is not resolved. continues foreach instead
+
+10-10-22 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.6
+	* removed exception if mm relation is not resolved. returns FALSE instead.
+	* LIKE statement in mm fieldproc is now getting escaped.
+
+10-10-18 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.5
+	* added preg_match_keys fieldproc
+
+10-10-05 - Jonas Dübi <jd@cabag.ch>
+	* Version 1.0.4
+	* fieldproc: added cachedtransformselect
+
+10-09-17 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.3
+	* fixed a bug with getLL
+	* fixed dam relation bug
+
+10-09-13 - Jonas Dübi <jd@cabag.ch>
+	* Version 1.0.2
+	* fieldproc/damfiles: first release
+	* fieldproc/damfiles: dataPreset option
+	* extended documentation for fieldproc tutorial
+
+10-09-10 - Jonas Dübi <jd@cabag.ch>
+	* Version 1.0.1
+	* fieldproc/damfiles: first version
+	* added some notes to the documentation
+	* started fieldproc tutorial in documentation
+	* enlarged configuration field
+	* added README.txt notes
+
+10-09-03 - Dimitri Koenig <dk@cabag.ch>
+	* Version 1.0.0
+	* added batch handling to mssql source
+
+10-08-31 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.9.9
+	* added function getNextRow to source xls to check the rows given by the interpret, if they're empty and don't use the empty rows
+
+10-08-25 - Nils Blattner <nb@cabag.ch>
+	* Version 0.9.8
+	* added new storage csv
+
+10-07-15 - Dimitri Koenig <dk@cabag.ch>
+	* Version 0.9.7
+	* direct mapping: if source field is empty, target field will be empty too
+
+10-07-13 - Dimitri Koenig <dk@cabag.ch>
+	* Version 0.9.6
+	* added cli section to the documentation
+	* fixed cli $importConf overwrite parameter
+	* removed unused $firstRowFlag from source_file
+	* added option for $this->conf['handler.']['addCurrentRowNumber']
+
+10-07-06 Nils Blattner <nb@cabag.ch>
+	* Version 0.9.5
+	* added the possibility to use a default value for the strtotime fieldproc
+
+10-06-14 Nils Blattner <nb@cabag.ch>
+	* Version 0.9.4
+	* added alternative CSV-interpreter to circumvent the issue with fgetcsv ignoring leading "Umlaute" (ÄÖÜ)
+
+10-06-07 Nils Blattner <nb@cabag.ch>
+	* Version 0.9.3
+	* added support for {$fieldProcFilesEnding} in files-fieldproc which represents the files ending
+
+10-06-07 Nils Blattner <nb@cabag.ch>
+	* Version 0.9.2
+	* fixed a bug in lib/sources/class.tx_cabagimport_source_file.php where searchFile was not considered
+
+10-04-30 - Dimitri Koenig <dk@cabag.ch>
+	* Version 0.9.0
+	* added 'trimFilename', 'skipEmptyFilename' and 'allowedFiletypes' option to 'copyfile' fieldproc
+	* added swx manual from Sonja Scholz <ss@cabag.ch>
+
+10-04-29 - Jonas Dübi <jd@cabag.ch>
+	* Version 0.8.9
+	* source/mssql - added batchSize option
+
+10-03-18 - Nils Blattner <nb@cabag.ch>
+	* Version 0.8.8
+	* added option in mssql source 'noDatabase'
+	* removed debug() from sendmail fieldproc
+
+10-03-09 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.8.7
+	* fieldproc/preg_replace - readded check for slash at the beginning instead of adding them always
+
+09-09-24 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.8.6
+	* fieldprocs/mkdir - new fieldproc for creating direcotries
+	* storage/sql - support for storing data in a different database
+
+09-09-23 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.8.5
+	* source/mysql - fixed bug with changing only the DB for the same DB user on source and storage
+
+09-09-17 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.8.4
+	* fieldprocs/sendmail - fixed devlog messages
+	* fieldprocs/passwordgen - renamed alphanumeric option to alphanum (TS Problem)
+
+09-09-16 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.8.3
+	* cli - removed <pre> tag
+
+09-09-15 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.8.2
+	* source/tce - added option dontUsePidForKeyField
+	* source/tce - added option moveAfterField
+
+09-08-28 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.8.1
+	* fieldproc/passwordgen - added option alphanumeric
+	* new fieldproc sendmail
+
+09-08-25 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.8.0
+	* fixed bug in all php files with dlog code, global $TYPO3_CONF_VARS
+
+09-07-22 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.7.9
+	* fixed bug in devlog writing - check $TYPO3_CONF_VARS['SYS']['enable_DLOG'] directly instead of the PHP constant
+
+09-07-22 - Sonja Scholz <ss@cabag.ch>
+	* Version 0.7.8
+	* fixed split bug in mm fieldproc
+	* show activate DLOG checkbox in the form if the current BE user is admin
+	* if activate DLOG checkbox is activated enable DLOG
+
+09-07-09 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.7
+	* source file: fixed option preImportSedExpression
+
+09-06-11 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.6
+	* added option overwrithe = 1 to copyfile fieldproc
+
+09-06-05 - Cedric Spindler <cs@cabag.ch>
+	* Version 0.7.5
+	* added floatval, added intval
+
+09-06-05 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.4
+
+09-04-20 - Jonas Duebi <jd@cabag.ch>
+	* mod1/index.php: added possibility to directly import as admin user
+	* fieldproc strtolower: added
+
+09-04-20 - Jonas Duebi <jd@cabag.ch>
+	* storage sql: problem with insertRow/updateRow
+	* storage sql: pid can be set now
+
+09-04-10 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.3
+	* handler: added rangeFrom and rangeTo configuration Option
+
+09-04-09 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.2
+	* copyfile: added support for getURL function with CURL
+	* source file: integrated Cedrics pre import sed support -> cool feature for pre import hacking :-)
+	* copyfile: dontCopyIfExists option added
+
+09-04-02 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.1
+	* added insertRow and updateRow to storage interface
+	* addapted storages to insertRow and updateRow
+	* addapted fieldprocs for mm an 1n for insertRow and updateRow
+
+09-02-10 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.7.0
+	* fixed problem if row has more cols than header row
+	* fixed default tca typoscript
+
+09-01-26 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.6.9
+	* fixed $LANG Problem in storage_tce
+
+08-11-20 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.8
+	* fixed bug in handler - don't search for a fieldproc if the stack has no array
+
+08-11-10 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.6.7
+	* moved catch for continue after invalid row around pid check
+	* added $this->extConf to handler (ext_conf_template.txt)
+	* added option maxerrormessages
+
+08-10-17 - Jonas Duebi <jd@cabag.ch>
+	* Version 0.6.6
+	* removed display_errors setting
+
+08-10-02 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.5
+	* fixed bug in sql storage - use ' for where statement values
+
+08-10-01 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.4
+	* fixed delete obsolete bug - only add additional where claus if it isn't empty
+	* fixed delete obsolete bug - show number of records (in dry mode) which will be deleted
+
+08-09-29 Jonas Duebi <jd@cabag.ch>
+	* Version 0.6.3
+	* fixed transform bug - used isset now so 0 can be set as value
+
+08-09-03 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.2
+	* allow import configuration also on standart pages
+
+08-09-01 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.1
+	* fixed bug in copyfile fieldproc - use sourcepath if no split value isset instead of sourcebasepath
+	* fixed bug in copyfile fieldproc - check if file exists only if the path is no url
+	* changed copyfile fieldproc - generate filename of new file if option createFilename isset
+	* changed tca - added option createFilename to generate a filename instead of using old filename
+	* fixed bug in copyfile fieldproc - check if the destination path already exists, then use another filename
+
+08-08-18 Sonja Scholz <ss@cabag.ch>
+	* Version 0.6.0
+	* added sql storage
+	* fixed bug in handler - choose the storage from the conf if isset
+
+08-08-09 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.9
+	* added useFindGrep option to files fieldProc
+
+08-08-08 Sonja Scholz <ss@cabag.ch>
+	* Version 0.5.8
+	* fixed bug in storage/tce - main() - $LANG was not defined
+	* changed fieldproc mm - added option tablekeyfieldlike, if isset search with LIKE %Value%
+	* added new mm option tablekeyfieldlike to default configuration in tca.php
+	* changed fieldproc files - added option clearCurrentFieldValueIfNothingFound
+	* added new files option clearCurrentFieldValueIfNothingFound to default configuration in tca.php
+
+08-07-25 Sonja Scholz <ss@cabag.ch>
+	* Version 0.5.7
+	* fixed bug - the in_charset and out_charset configuration was not used - Important bug fix! Please update!
+	* changed tca.php - fixed bug in transform example
+
+08-07-24 Sonja Scholz <ss@cabag.ch>
+	* Version 0.5.6
+	* fixed bug in handler - fill in the keyFieldRow with empty values if the count of values is smaller than the count of values of the currentRawRow array
+
+08-07-22 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.5
+	* changed keyFieldRow concept, reduced code and moved it into handler (array_combine)
+	* removed firstRow param from source and interpreters
+	* memory and performance optimization
+	* removed TEXT from example typoscript in TCA, so the direct call is used when possible
+	* added comment about limit for messages array
+	* new option for storage "dontUpdateFields"
+	* added storage config array
+	* added option escape to csv interpret
+	* removed escape option because not supported by php < 5.3 and per default \
+
+08-07-21 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.4
+	* integrated scanDir cache for files fieldproc
+	* copy files within "files fieldproc" instead of rename
+	* added message array limit
+	* changed fieldproc mm - added currentRowNumber to exception fieldProc.exception.noRelatedRecord
+
+08-07-02 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.3
+	* turned up max execution time
+	* set new exception file not found for copyfile
+	* set SET SESSION group_concat_max_len = 1000000 for mysql source
+
+08-07-02 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.2
+	* mysql source takes typo3 db if you not add any other db
+	* copyfile now supports splitting
+	* new option returnJustFilename for copy file
+
+08-07-02 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.1
+	* fixed required bug with direct field selection
+	* reorganized direct field selection
+
+08-07-02 Jonas Duebi <jd@cabag.ch>
+	* Version 0.5.0
+	* added xls source which converts xls2csv and than uses the csv interpreter
+	* reorganized source file for source xls
+
+08-07-01 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.9
+	* added mssql source
+	* changed tca.php - added configuration example for mssql source
+
+08-06-30 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.8
+	* added mysql source
+	* changed tca.php - added configuration example for mysql source
+	* fixed bug in file source - path to file in xclass code was wrong
+
+08-06-30 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.7
+	* fixed bug in file source - substr in if clause for filepath was wrong
+
+08-06-26 Jonas Duebi <jd@cabag.ch>
+	* Version 0.4.6
+	* fixed storage bug changed configuration
+	* fixed cli cron ext_localconf.php
+
+08-06-25 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.5
+	* fixed bug in source file - use the filepath as absolute path if it is not remote
+
+08-06-24 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.4
+	* choose tce storage by default
+
+08-06-24 Sonja Scholz <ss@cabag.ch>
+	* Version 0.4.3
+	* added fieldproc copyfile
+	* changed tca.php - added example configuration for copyfile fieldproc
+	* made storage dynamically loadable
+	* changed tca.php - added example configuration for storage selection
+	* changed tca.php - changed example configuration of transform fieldproc
+	* changed tranform fieldproc - now tranform posibilities are in the sub array tranform
+
+2008-06-17 Jonas Dubei <jd@cabag.ch>
+	* Version 0.4.2
+	* made interpret dynamically loadable
+	* added interpret xml
+	* enabled direct selection of the field
+
+2008-06-17 Jonas Dubei <jd@cabag.ch>
+	* Version 0.4.1
+	* fixed bug with isource
+	* fixed archiving in source_file.php
+	* enabled sourceURL in mod1
+	* support for remote files in source_file
+
+2008-05-22 Jonas Dubei <jd@cabag.ch>
+	* Version 0.4.0
+	* enabled autoloading of fieldproc classes
+	* renamed "handle" to "handler"
+	* updated a lot of comments which where not correct anymore
+	* renamed objectSource and objectDb to db and source
+	* removed a lot of strange try and catch() code
+	* added source and interpret to SC_OPTIONS to be loaded dynamically
+	* renamed interfaces according to standards: tx_cabagimport_isource
+	* restructured source and intepret classes for dynamic loading
+	* changed interface for sources
+
+08-04-30 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.3.0
+	* fix bug in fieldproc_text - changed the xclass code at the end of the file
+	* added fieldproc_transform for the transform functionality
+	* added fieldproc_passwordgen to generate a password automaticly
+	* added fieldproc_files to import files from a given directory and relate to them
+	* changed the tca default configuration
+	* changed handler/fieldProc function - replace the constand currentFieldValue with the value before calling the next fieldproc
+
+08-04-24 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.9
+	* changed mod1/index.php - also normal BE users can use the module
+	* fix for TYPO3 pre 4.0
+
+08-04-24 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.8
+	* fixed bug - removed development echo from fieldproc_mm
+	* added function - tx_cabagimport_db:createMMRelation
+
+08-04-23 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.7
+	* added the functionality to the cli, that more than one importuid is possible (f.E. for translations)
+
+08-04-23 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.6
+	* fixed bug - now all $LANG vars in the fieldprocs are global
+	* fixed bug - the instanciation of new objects is done now in the right way for xclasses
+
+08-04-22 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.5
+	* added function searchPath to file source class
+	* added directory cli with a cli script for the import
+	* added new configuration options for the searchPath function to the tca example configuration
+
+08-04-17 Jonas Duebi / cab services ag <jd@cabag.ch>
+	* Version 0.2.4
+	* Added default config to tca
+	* evalute csv interpret delimiter to enable usage of tabs, spaces and similar
+	* moved replace constants in separate function with recursion
+	* fixed bug with pid
+	* cleaned up some realy bad things in _db class (tstamp was not set)
+	* new option continue after invalid row
+
+08-04-16 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.3
+	* fieldproc / relation - solved bug, search only for existing records which are not deleted
+	* fieldproc / relation - added configuration option relationaddwhere to add a custom part to the search where clause
+
+08-04-15 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.2
+	* solved bug - tx_cabagimport_isource interface has wrong parameters defined for the construct function
+	* solved bug - file path in the source file archiveFile function was wrong
+
+08-04-14 Jonas Duebi / cab services ag <jd@cabag.ch>
+	* Version 0.2.1
+	* config is now fetched befor handler is constructed (static function)
+	* fieldprocs are now dynamicly loaded and configurable like hooks
+
+08-04-07 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.2.0
+	* changed icon definition for DB table config to ext_icon.gif
+	* added lib/class.tx_cabagimport_db.php
+	* added lib/class.tx_cabagimport_fieldproc.php
+	* added lib/class.tx_cabagimport_handler.php
+	* added lib/class.tx_cabagimport_interpret.php
+	* added lib/class.tx_cabagimport_source.php
+
+08-04-07 Sonja Scholz  <ss@cabag.ch>
+	* Initial release
+
+/* --- Complete extension redesign!!! --- */
+
+08-01-28 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.1.0
+	* solved bug - previous added condition was wrong, had had no effect
+
+08-01-28 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.0.9
+	* solved writing error "Fühge"
+	* added condition for SELECT query of existing items, to prevent overwriting existing items on another page (with another PID)
+
+08-01-25 Jonas Duebi / cab services ag  <jd@cabag.ch>
+	* Version 0.0.8
+	* added _default transform option
+
+07-10-08 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.0.7
+	* fixed deleteObsolete bug
+
+07-10-08 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.0.6
+	* use mysql_escape_string for where fields in keyfield condition
+
+07-10-08 Sonja Scholz / cab services ag <ss@cabag.ch>
+	* Version 0.0.5
+	* removed the old import files from mod1 folder
+
+07-08-17 Jonas Duebi / cab services ag  <jd@cabag.ch>
+
+	* added addifmissing option to importRecord
+	* the insertData function works now with {field}
+	* added comma separated reference function
+	* added 'addifmissing' property to comma separated reference function
+	* added locallang functionality to the setError function
+	* now it's possible to use insertData() combined with reference
+
+07-08-15 Jonas Duebi / cab services ag  <jd@cabag.ch>
+
+	* changed the extension key from cab_import to cabag_import
+	* added module and extension icon
+	* changed README.txt
+
+07-04-02 Jonas Duebi / cab services ag  <jd@cabag.ch>
+
+	* Initial release

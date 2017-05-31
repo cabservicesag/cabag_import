@@ -1,0 +1,104 @@
+#! /usr/bin/php -q
+<?php 
+
+// *****************************************
+// Standard initialization of a CLI module:
+// *****************************************
+
+// Defining circumstances for CLI mode:
+define('TYPO3_cliMode', TRUE);
+
+ini_set("memory_limit", "512M"); 
+
+// Defining PATH_thisScript here: Must be the ABSOLUTE path of this script in the right context:
+// This will work as long as the script is called by it's absolute path!
+if (!defined('PATH_thisScript')) {
+	define('PATH_thisScript', __FILE__);
+}
+
+$GLOBALS['_SERVER']['HTTP_USER_AGENT'] = 'Some Flash Browser';
+$GLOBALS['_SERVER']['HTTPS'] = '1';
+
+// Include configuration file:
+require(dirname(PATH_thisScript).'/conf.php');
+// Include configuration file:
+require(dirname(PATH_thisScript).'/conf.php');
+
+// Include init file:
+require(dirname(PATH_thisScript).'/'.$BACK_PATH.'init.php');
+
+if (version_compare(TYPO3_version, '6.2', '<')) {
+	// load $LANG and co
+	require_once(dirname(PATH_thisScript).'/'.$BACK_PATH.'template.php');
+}
+
+// load locallang file
+$LANG->includeLLFile('EXT:cabag_import/mod1/locallang.xml');
+
+require_once(t3lib_extMgm::extPath('cabag_import').'lib/class.tx_cabagimport_handler.php');
+require_once(t3lib_extMgm::extPath('cabag_import').'ext_localconf.php');
+
+try {
+	
+	do {
+		if (!empty($nextImportUid)){
+			$importUid = $nextImportUid;
+			$overwriteConf = false;
+			unset($nextImportUid);
+		}
+		
+		while (list(,$argvValue) = each($_SERVER['argv'])){
+			// get import uid
+			if ($argvValue == '--importuid'){
+				if (empty($importUid)){
+					list(,$importUid) = each($_SERVER['argv']);
+					$importUid = $importUid;
+				} else {
+					list(,$nextImportUid) = each($_SERVER['argv']);
+					$nextImportUid = $nextImportUid;
+					break;
+				}
+			}
+			// get overwrite configuration
+			if (preg_match('/^\$importConf.*$/', $argvValue)){
+				$overwriteConf[] = $argvValue;
+			}
+		}
+		
+		// check uid
+		if (empty($importUid)){
+			exit ('-1 usage: php ./import.phpsh --importuid 1 "\$importConf[\'handler.\'][\'defaultPid\']=2" --importuid 2 "\$importConf[\'handler.\'][\'defaultPid\']=5"');
+		}
+		
+		// get config
+		$importConf = tx_cabagimport_handler::getConf($importUid);
+		if (!$importConf){
+			exit('1 import configuration not found');
+		}
+		
+		if (!empty($overwriteConf)){
+			foreach ($overwriteConf as $overwrite){
+				eval($overwrite);
+			}
+		}
+		
+		// gets the tx_cabagimport_handler object
+		$import = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_cabagimport_handler', $importConf);
+		
+		// Start the import process
+		$import->main(false);
+		
+		echo '<br/><hr/><br/><h1>'.$LANG->getLL('importRunning').'</h1><br/>';
+		echo implode('<br/>', $import->getMessages());
+	} while(!empty($nextImportUid));
+	
+} catch (Exception $exception) {
+	// invoke loghandler
+	if($tx_cabagimport_handler->loghandler instanceOf tx_cabagimport_iloghandler){
+		$tx_cabagimport_handler->loghandler->setMessage($exception->getMessage(), 0, $exception);
+		$tx_cabagimport_handler->loghandler->finish();
+	}
+	echo '<br/><div style="color:red">'.$exception->getMessage().'</div><br/>';
+}
+
+?>

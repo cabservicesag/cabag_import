@@ -1,0 +1,14 @@
+# Module configuration
+module.tx_cabagimport {
+	persistence {
+		storagePid = {$module.tx_cabagimport.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_cabagimport.view.templateRootPath}
+		partialRootPath = {$module.tx_cabagimport.view.partialRootPath}
+		layoutRootPath = {$module.tx_cabagimport.view.layoutRootPath}
+	}
+	settings {
+		config_file_extension = tx_cabagimport
+	}
+}

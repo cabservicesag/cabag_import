@@ -1,0 +1,72 @@
+<f:layout name="Default" />
+<f:section name="main">
+	<h1><f:translate key="title">Import</f:translate></h1>
+	<f:form action="index" enctype="multipart/form-data">
+	    <f:if condition="{importStarted}">
+		
+		<f:then>
+		    <f:format.raw>{importMessages}</f:format.raw>
+		</f:then>
+		<f:else>
+		    <f:if condition="{importConfig}">
+			<f:then>
+			<f:comment>Show the preview form</f:comment>
+				<strong></strong>
+
+				<f:form.hidden name="importFile" value="{importFile}" />
+				<f:form.hidden name="importConfig" value="{importConfig}" />
+			</f:then>
+			<f:else>
+			<f:comment>Show the start form</f:comment>
+			<table>
+				<tr>
+				<td>
+				<label for="importConfig"><f:translate key="importConfig" /></label>
+				</td>
+				<td>
+				<f:form.select options="{configSelectOptions}" id="importConfig" name="importConfig" size="1"/>
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="importFile"><f:translate key="importFile" /></label>
+				</td>
+				<td>
+				<f:form.upload id="importFile" name="importFile"/>
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="importURL"><f:translate key="importUrl" /></label>
+				</td>
+				<td>
+				<f:form.textfield id="importURL" name="importURL" size="50" />
+				</td>
+				</tr>
+				<f:if condition="{isAdmin}">
+					<tr>
+						<td>
+							<label for="importURL"><f:translate key="activateDLOG" /></label>
+						</td>
+						<td>
+							<f:form.checkbox id="activateDLOG" name="activateDLOG" value="1" />
+						</td>
+					</tr>
+				</f:if>
+			</table>
+			<f:form.submit name="dryRun" value="<f:translate key='preview' />" />
+			
+		</f:else>
+		</f:if>
+		    <f:if condition="{isAdmin}">
+			    <f:form.submit name="startImport" value="<f:translate key='startImport' />" />
+		    </f:if>
+		</f:else>
+	    </f:if>
+		
+		
+	</f:form>
+	<br/>
+	<f:format.raw>{messages}</f:format.raw>
+
+</f:section>
