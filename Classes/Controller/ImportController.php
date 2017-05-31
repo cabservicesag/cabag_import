@@ -4,6 +4,7 @@ namespace Cabag\CabagImport\Controller;
 *  Copyright notice
 *
 *  (c) 2007 Jonas Dübi / cab services ag <jd@cabag.ch>
+*  (c) 2017 Tizian Schmidlin / cab services ag <st@cabag.ch>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -107,7 +108,7 @@ class ImportController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
 				if($this->request->hasArgument('startImport')) {
 					//echo 'start import';
-				  
+
 					if($this->request->hasArgument('importURL') && !empty($this->request->getArgument('importURL') && !empty($this->request->getArgument('importUrl')['name']))){
 						$this->importConf['source.']['filePath'] = $this->request->getArgument('importURL');
 					}
@@ -115,7 +116,7 @@ class ImportController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 						// set the path for the file
 						$this->importConf['source.']['filePath'] = $this->request->getArgument('importFile');
 					}
-					
+
 					// enable DLOG directly in this module if the checkbox is activated
 					if($this->request->hasArgument('activateDLOG')) {
 						$TYPO3_CONF_VARS['SYS']['enable_DLOG'] = 1;
@@ -140,7 +141,7 @@ class ImportController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 					    move_uploaded_file($_FILES['tx_cabagimport_web_cabagimporttxcabagimportm1']['tmp_name']['importFile'], $this->importConf['source.']['filePath']);
 					}
 
-					
+
 					if($this->request->hasArgument('importURL') && !empty($this->request->getArgument('importURL') && !empty($this->request->getArgument('importUrl')['name']))){
 						$this->importConf['source.']['filePath'] = $this->request->getArgument('importURL');
 					}

@@ -40,7 +40,7 @@ This version is a coplete rewrite with a proper MVC pattern and PHP Namespaces i
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
 	'author_company' => '',
-	'version' => '2.8.27',
+	'version' => '2.8.28',
 	'constraints' =>
 	array (
 		'depends' =>

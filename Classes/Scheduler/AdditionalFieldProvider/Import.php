@@ -1,17 +1,29 @@
 <?php
 namespace \Cabag\CabagImport\Scheduler\AdditionalFieldProvider\Import;
-/**
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
- */
+
+/***************************************************************
+*  Copyright notice
+*
+*  (c) 2017 Tizian Schmidlin <st@cabag.ch>
+*  All rights reserved
+*
+*  This script is part of the TYPO3 project. The TYPO3 project is
+*  free software; you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation; either version 2 of the License, or
+*  (at your option) any later version.
+*
+*  The GNU General Public License can be found at
+*  http://www.gnu.org/copyleft/gpl.html.
+*
+*  This script is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*
+*  This copyright notice MUST APPEAR in all copies of the script!
+***************************************************************/
+
 /**
  * This is the base class for all Scheduler tasks
  * It's an abstract class, not designed to be instantiated directly
@@ -21,13 +33,13 @@ namespace \Cabag\CabagImport\Scheduler\AdditionalFieldProvider\Import;
  */
 
 class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
-	
+
 	/**
 	 * additional fields
 	 * @var
 	 */
 	protected $additionalFields = array();
-	/** 
+	/**
 	 * Constructor for the additional field provider
 	 * @return void
 	 */
@@ -45,7 +57,7 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 			),
 		);
 	}
-	
+
 	/**
 	 * Gets additional fields to render in the form to add/edit a task
 	 *
@@ -57,7 +69,7 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 	public function getAdditionalFields(array &$taskInfo, $task, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		$return = array(
 		);
-		
+
 		if ($task != null) {
 			$settings = $task->getSettings();
 		} else {
@@ -68,7 +80,7 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 			// every class needs their own variables
 			$setKey = $key;
 			$key = $class . '_' . $key;
-			
+
 			// Initialize field value
 			if (empty($taskInfo[$key])) {
 				if ($schedulerModule->CMD == 'add') {
@@ -82,9 +94,9 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 					$taskInfo[$key] = '';
 				}
 			}
-			
+
 			$entry = array();
-			
+
 			switch ($def['type']) {
 				case 'select' :
 					$entry = array(
@@ -103,37 +115,37 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 					);
 					break;
 			}
-			
+
 			$return[$key] = $entry;
 		}
-		
+
 		return $return;
 	}
-	
+
 	protected function getListOfImportsAsSelect($taskInfo, $key) {
-		
+
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			'uid, title',
 			'tx_cabagimport_config',
 			'deleted = 0 and hidden = 0' // since only admins access scheduler, no further checks have to be made
 		);
-		
+
 		$returnSelect = '<select name="tx_scheduler[' . $key . ']" id="' . $key . '"><option value="">None</option>';
-		
+
 		$returnSelect .= '<optgroup label="Database located imports">';
 		while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
 			$returnSelect .= '<option value="' . $row['uid'] . '"' . ($row['uid'] == $taskInfo[$key] ? ' selected="selected"' : '') . '>' . $row['title'] . '</option>';
 		}
-		
+
 		$returnSelect .='</optgroup><optgroup label="File based imports">';
 		if(is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/cabag_import/lib/class.tx_cabagimport_handler.php']['importConfig'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/cabag_import/lib/class.tx_cabagimport_handler.php']['importConfig'] as $k => $data) {
 				$returnSelect .= '<option value="' . $k . '"' . ($k == $taskInfo[$key] ? ' selected="selected"' : '') . '>' . $data['title'] . '</option>';
 			}
 		}
-		
+
 		return $returnSelect . '</optgroup></select>';
-		
+
 	}
 
 	/**
@@ -144,12 +156,12 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 	 * @return boolean TRUE if validation was ok (or selected class is not relevant), FALSE otherwise
 	 */
 	public function validateAdditionalFields(array &$submittedData, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
-		
+
 		$class = get_class($this);
-		
+
 		foreach ($this->additionalParameters as $key => $def) {
 			$key = $class . '_' . $key;
-			
+
 			switch ($def['type']) {
 				case 'int' :
 					$submittedData[$key] = intval($submittedData[$key]);
@@ -182,12 +194,12 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 	 */
 	public function saveAdditionalFields(array $submittedData, \TYPO3\CMS\Scheduler\Task\AbstractTask $task) {
 		$settings = array();
-		
+
 		$class = get_class($this);
 		foreach ($this->additionalParameters as $key => $def) {
 			$setKey = $key;
 			$key = $class . '_' . $key;
-			
+
 			switch ($def['type']) {
 				case 'select' :
 					$settings[$setKey] = $submittedData[$key]; // we must accept everything, since this could also be keys to files
@@ -197,8 +209,7 @@ class Import implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
 					break;
 			}
 		}
-		
+
 		$task->setSettings($settings);
 	}
 }
-

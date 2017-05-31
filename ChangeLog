@@ -1,3 +1,8 @@
+2017-05-31 Tizian Schmidlin <st@cabag.ch>
+	* version 2.8.28
+	* added missing copyright notices
+	* added readme
+
 2017-05-09 Lavinia Negru <ln@cabag.ch>
 	* version 2.8.27
 	* modified Fieldproc/AddToCommaSeparatedList.php and Fieldproc/CommaSeparatedLocal.php
